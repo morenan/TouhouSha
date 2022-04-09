@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D66E6D1E-F88F-4625-9204-E0A5EC4A799C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TouhouSha</RootNamespace>
+    <AssemblyName>TouhouSha</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>TouhouSha.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CardGallery.xaml.cs">
+      <DependentUpon>CardGallery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CharactorGallery.xaml.cs">
+      <DependentUpon>CharactorGallery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguratePage.xaml.cs">
+      <DependentUpon>ConfiguratePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Cools\CardWaveCool2.xaml.cs">
+      <DependentUpon>CardWaveCool2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Cools\FireAnim.xaml.cs">
+      <DependentUpon>FireAnim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Cools\ThunderAnim.xaml.cs">
+      <DependentUpon>ThunderAnim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Galleries\AbilityRadarTooltip.xaml.cs">
+      <DependentUpon>AbilityRadarTooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Areas\DesktopPlacer.xaml.cs">
+      <DependentUpon>DesktopPlacer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Areas\DiscardHeapPlacer.xaml.cs">
+      <DependentUpon>DiscardHeapPlacer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Areas\DrawHeapPlacer.xaml.cs">
+      <DependentUpon>DrawHeapPlacer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Areas\IGameBoardArea.cs" />
+    <Compile Include="Controls\Buttons\SkillButton.xaml.cs">
+      <DependentUpon>SkillButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Cools\BlurText.xaml.cs">
+      <DependentUpon>BlurText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BoxedControl.cs" />
+    <Compile Include="Controls\Galleries\CardGalleryItem.xaml.cs">
+      <DependentUpon>CardGalleryItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CardPanel.xaml.cs">
+      <DependentUpon>CardPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Galleries\CardTooltip.xaml.cs">
+      <DependentUpon>CardTooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CardView.xaml.cs">
+      <DependentUpon>CardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Galleries\CharactorGalleryItem.xaml.cs">
+      <DependentUpon>CharactorGalleryItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Cools\CardWaveCool.xaml.cs">
+      <DependentUpon>CardWaveCool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Cools\CrossLineWave.xaml.cs">
+      <DependentUpon>CrossLineWave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Cools\PressAndBrokenLabel.xaml.cs">
+      <DependentUpon>PressAndBrokenLabel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\GameModeButton.xaml.cs">
+      <DependentUpon>GameModeButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Panels\CharactorSelectPanel.xaml.cs">
+      <DependentUpon>CharactorSelectPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Galleries\CharactorTooltip.xaml.cs">
+      <DependentUpon>CharactorTooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Areas\EquipList.xaml.cs">
+      <DependentUpon>EquipList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Areas\HandBoard.xaml.cs">
+      <DependentUpon>HandBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Cools\HighlightText.cs" />
+    <Compile Include="Controls\HpBar.xaml.cs">
+      <DependentUpon>HpBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HpBarItem.xaml.cs">
+      <DependentUpon>HpBarItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MessageAskBox.xaml.cs">
+      <DependentUpon>MessageAskBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Areas\SkillButtonList.xaml.cs">
+      <DependentUpon>SkillButtonList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Panels\ListPanel.xaml.cs">
+      <DependentUpon>ListPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buttons\StartMenuButton.xaml.cs">
+      <DependentUpon>StartMenuButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SymbolBox.xaml.cs">
+      <DependentUpon>SymbolBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ValueBar.xaml.cs">
+      <DependentUpon>ValueBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingPage.xaml.cs">
+      <DependentUpon>LoadingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SoundResources.cs" />
+    <Compile Include="StartMenu.xaml.cs">
+      <DependentUpon>StartMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartupScreen.xaml.cs">
+      <DependentUpon>StartupScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SelectCharactorWindow.xaml.cs">
+      <DependentUpon>SelectCharactorWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CardGallery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CharactorGallery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfiguratePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Cools\CardWaveCool2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Cools\FireAnim.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Cools\ThunderAnim.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Galleries\AbilityRadarTooltip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Areas\DesktopPlacer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Areas\DiscardHeapPlacer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Areas\DrawHeapPlacer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Buttons\SkillButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Cools\BlurText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Galleries\CardGalleryItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CardPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Galleries\CardTooltip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Galleries\CharactorGalleryItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Cools\CardWaveCool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Cools\CrossLineWave.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Cools\PressAndBrokenLabel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Buttons\GameModeButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Panels\CharactorSelectPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Galleries\CharactorTooltip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Buttons\CustomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Panels\DesktopBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Areas\EquipList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Areas\HandBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HpBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HpBarItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MessageAskBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Areas\PlayerCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Areas\SkillButtonList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Panels\ListPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Buttons\StartMenuButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SymbolBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ValueBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\Buttons\CustomButton.xaml.cs">
+      <DependentUpon>CustomButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Panels\DesktopBoard.xaml.cs">
+      <DependentUpon>DesktopBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Areas\PlayerCard.xaml.cs">
+      <DependentUpon>PlayerCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameBoard.xaml.cs">
+      <DependentUpon>GameBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartupScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SelectCharactorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TouhouSha.AI\TouhouSha.AI.csproj">
+      <Project>{43a770e6-91b7-434f-9b31-d0cf9ec5b338}</Project>
+      <Name>TouhouSha.AI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TouhouSha.Core\TouhouSha.Core.csproj">
+      <Project>{cdeb78bd-7c0d-4bd8-91ec-a52ecd26daa7}</Project>
+      <Name>TouhouSha.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TouhouSha.Koishi\TouhouSha.Koishi.csproj">
+      <Project>{d8833127-e3ab-4c28-a147-9ccee44f5157}</Project>
+      <Name>TouhouSha.Koishi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TouhouSha.Reimu\TouhouSha.Reimu.csproj">
+      <Project>{e3a0d5db-a8ac-43e8-99c1-7dafb48bc292}</Project>
+      <Name>TouhouSha.Reimu</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TouhouSha.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

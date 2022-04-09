@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="TouhouSha.Controls.HpBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TouhouSha.Controls"
+             mc:Ignorable="d">
+    <Grid>
+        <StackPanel x:Name="SP_Items" Orientation="Horizontal"/>
+        <local:HighlightText x:Name="UI_Text" Text="HP:10" Foreground="#C080FF80" HighlightForeground="#C0404040" HighlightThickness="1" FontWeight="Bold" FontSize="10" Visibility="Collapsed"/>
+    </Grid>
+</UserControl>

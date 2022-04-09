@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="TouhouSha.Controls.CharactorTooltip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TouhouSha.Controls"
+             mc:Ignorable="d" x:Name="This"
+             IsHitTestVisible="False" Foreground="White" MaxWidth="450"
+             Template="{StaticResource ContentControl_DarkRed}" FontFamily="幼圆">
+    <StackPanel Margin="8">
+        <StackPanel Orientation="Horizontal" Margin="0,4">
+            <TextBlock x:Name="TL_Name" VerticalAlignment="Center" FontSize="16" Text="博丽灵梦"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,2">
+            <TextBlock x:Name="TL_HP" VerticalAlignment="Center" Text="HP:3/3" Margin="0,0,16,0"/>
+            <TextBlock x:Name="TL_Country" VerticalAlignment="Center" Text="自机"/>
+        </StackPanel>
+        <Border HorizontalAlignment="Stretch" BorderThickness="0,0,0,1">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                    <GradientStop Color="#00FFFFFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+        </Border>
+        <StackPanel x:Name="SP_Skills">
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock x:Name="TL_Image_Author" FontSize="11" Text="图片作者：" Margin="0,0,16,0"/>
+            <TextBlock x:Name="TL_Image_PixivId" FontSize="11" Text="Pixiv ID ："/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3A0D5DB-A8AC-43E8-99C1-7DAFB48BC292}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TouhouSha.Reimu</RootNamespace>
+    <AssemblyName>TouhouSha.Reimu</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIs\ChangeJudgeCardWorth.cs" />
+    <Compile Include="AIs\PointBattleCardWorth.cs" />
+    <Compile Include="AIs\PointMultiBattleCardWorth.cs" />
+    <Compile Include="Charactors\AnotherLands\Komachi.cs" />
+    <Compile Include="Charactors\AnotherLands\Shiki.cs" />
+    <Compile Include="Charactors\Chirendens\Kisume.cs" />
+    <Compile Include="Charactors\Chirendens\Koishi.cs" />
+    <Compile Include="Charactors\Chirendens\NikoRin.cs" />
+    <Compile Include="Charactors\Chirendens\Parsee.cs" />
+    <Compile Include="Charactors\Chirendens\Satori.cs" />
+    <Compile Include="Charactors\Chirendens\Utsuho.cs" />
+    <Compile Include="Charactors\Chirendens\Yamame.cs" />
+    <Compile Include="Charactors\Chirendens\Yugi.cs" />
+    <Compile Include="Charactors\Desires\Futo.cs" />
+    <Compile Include="Charactors\Fairy\Luna.cs" />
+    <Compile Include="Charactors\Fairy\Star.cs" />
+    <Compile Include="Charactors\Fairy\Sunny.cs" />
+    <Compile Include="Charactors\Myouren\Kyouko.cs" />
+    <Compile Include="Charactors\Desires\Miko.cs" />
+    <Compile Include="Charactors\Desires\Seiga.cs" />
+    <Compile Include="Charactors\Desires\Toziko.cs" />
+    <Compile Include="Charactors\Desires\Yoshika.cs" />
+    <Compile Include="Charactors\Fairy\Daiyosi.cs" />
+    <Compile Include="Charactors\Forevers\Erin.cs" />
+    <Compile Include="Charactors\Forevers\Kaguya.cs" />
+    <Compile Include="Charactors\Forevers\Keine.cs" />
+    <Compile Include="Charactors\Forevers\Mokou.cs" />
+    <Compile Include="Charactors\Forevers\Tewi.cs" />
+    <Compile Include="Charactors\Ghosts\Lunasa.cs" />
+    <Compile Include="Charactors\Ghosts\Lyrica.cs" />
+    <Compile Include="Charactors\Ghosts\Merlin.cs" />
+    <Compile Include="Charactors\Ghosts\Yoyoko.cs" />
+    <Compile Include="Charactors\Homos\DevilLily.cs" />
+    <Compile Include="Charactors\Homos\Flandre.cs" />
+    <Compile Include="Charactors\Homos\HongMeiLing.cs" />
+    <Compile Include="Charactors\Homos\Pachuli.cs" />
+    <Compile Include="Charactors\Homos\Remilia.cs" />
+    <Compile Include="Charactors\Homos\Rumiya.cs" />
+    <Compile Include="Charactors\Moriya\Kanako.cs" />
+    <Compile Include="Charactors\Moriya\Suwako.cs" />
+    <Compile Include="Charactors\Moriya\Tensoku.cs" />
+    <Compile Include="Charactors\Myouren\Hiziri.cs" />
+    <Compile Include="Charactors\Myouren\Ichirin.cs" />
+    <Compile Include="Charactors\Myouren\Kogasa.cs" />
+    <Compile Include="Charactors\Myouren\Minamitu.cs" />
+    <Compile Include="Charactors\Myouren\Nazrin.cs" />
+    <Compile Include="Charactors\Myouren\Nue.cs" />
+    <Compile Include="Charactors\Myouren\Shou.cs" />
+    <Compile Include="Charactors\Onis\Kasen.cs" />
+    <Compile Include="Charactors\Onis\Suika.cs" />
+    <Compile Include="Charactors\SelfCrafts\Aya.cs" />
+    <Compile Include="Charactors\SelfCrafts\Crino.cs" />
+    <Compile Include="Charactors\SelfCrafts\Marisa.cs" />
+    <Compile Include="Charactors\SelfCrafts\Reimu.cs" />
+    <Compile Include="Charactors\SelfCrafts\Reisen.cs" />
+    <Compile Include="Charactors\SelfCrafts\Sakuya.cs" />
+    <Compile Include="Charactors\SelfCrafts\Sanae.cs" />
+    <Compile Include="Charactors\SelfCrafts\YouMon.cs" />
+    <Compile Include="Charactors\Skys\Iku.cs" />
+    <Compile Include="Charactors\Skys\Tenshi.cs" />
+    <Compile Include="Charactors\Tsukumo\Kokoro.cs" />
+    <Compile Include="Charactors\Wizards\Alice.cs" />
+    <Compile Include="Charactors\YouKais\Chen.cs" />
+    <Compile Include="Charactors\YouKais\Ran.cs" />
+    <Compile Include="Charactors\YouKais\Yucari.cs" />
+    <Compile Include="Charactors\YouKais\Yuka.cs" />
+    <Compile Include="Filters\PointBattleTargetSelector2.cs" />
+    <Compile Include="Package.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Triggers\PointBattleTrigger2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TouhouSha.Core\TouhouSha.Core.csproj">
+      <Project>{cdeb78bd-7c0d-4bd8-91ec-a52ecd26daa7}</Project>
+      <Name>TouhouSha.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TouhouSha.Koishi\TouhouSha.Koishi.csproj">
+      <Project>{d8833127-e3ab-4c28-a147-9ccee44f5157}</Project>
+      <Name>TouhouSha.Koishi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,115 @@
+﻿<Button x:Class="TouhouSha.Controls.CustomButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TouhouSha.Controls"
+             mc:Ignorable="d" x:Name="This"
+             d:DesignHeight="450" d:DesignWidth="800"
+             Foreground="{Binding CustomBorder.Foreground,ElementName=This,Mode=OneWay}">
+    <Button.Resources>
+        <local:CustomButtonSampleBorder x:Key="StartMenuBorder" 
+                                        BorderMargin="2" 
+                                        BorderThickness="1"
+                                        Foreground="White">
+            <local:CustomButtonSampleBorder.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="#80808080"/>
+                    <GradientStop Offset="0.5" Color="#80404040"/>
+                    <GradientStop Offset="1" Color="#80808080"/>
+                </LinearGradientBrush>
+            </local:CustomButtonSampleBorder.Background>
+            <local:CustomButtonSampleBorder.MouseOverBackground>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="#C0808080"/>
+                    <GradientStop Offset="0.5" Color="#C0404040"/>
+                    <GradientStop Offset="1" Color="#C0808080"/>
+                </LinearGradientBrush>
+            </local:CustomButtonSampleBorder.MouseOverBackground>
+            <local:CustomButtonSampleBorder.MouseDownBackground>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="#C08080A0"/>
+                    <GradientStop Offset="0.5" Color="#C0202040"/>
+                    <GradientStop Offset="1" Color="#C08080A0"/>
+                </LinearGradientBrush>
+            </local:CustomButtonSampleBorder.MouseDownBackground>
+            <local:CustomButtonSampleBorder.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Offset="0" Color="#C0FFFFFF"/>
+                    <GradientStop Offset="0.5" Color="#FFFFFFFF"/>
+                    <GradientStop Offset="1" Color="#C0FFFFFF"/>
+                </LinearGradientBrush>
+            </local:CustomButtonSampleBorder.BorderBrush>
+        </local:CustomButtonSampleBorder>
+        <local:FalseHidden x:Key="FalseHidden"/>
+        <local:TrueHidden x:Key="TrueHidden"/>
+    </Button.Resources>
+    <Button.Template>
+        <ControlTemplate TargetType="{x:Type Button}">
+            <Grid x:Name="PART_Grid_Root">
+                <Grid x:Name="PART_Grid">
+                    <Border x:Name="PART_Border_Out" 
+                            Background="{Binding CustomBorder.Background,RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                            Opacity="1" 
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    </Border>
+                    <Border x:Name="PART_Border_MouseOver"
+                            Background="{Binding CustomBorder.MouseOverBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                            Opacity="0"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    </Border>
+                    <Border x:Name="PART_Border_MouseDown"
+                            Background="{Binding CustomBorder.MouseDownBackground,RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                            Opacity="0"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    </Border>
+                    <Border x:Name="PART_Border_In"
+                            Margin="{Binding CustomBorder.BorderMargin,RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                            BorderBrush="{Binding CustomBorder.BorderBrush,RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                            BorderThickness="{Binding CustomBorder.BorderThickness,RelativeSource={RelativeSource Mode=TemplatedParent}}">
+                    </Border>
+                </Grid>
+                <ContentPresenter Content="{TemplateBinding Content}" 
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  Margin="{TemplateBinding Padding}"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="PART_Border_Out" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1"/>
+                                <DoubleAnimation Storyboard.TargetName="PART_Border_MouseOver" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="PART_Border_Out" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1"/>
+                                <DoubleAnimation Storyboard.TargetName="PART_Border_MouseOver" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="PART_Border_MouseDown" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="PART_Border_MouseDown" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Button.Template>
+</Button>

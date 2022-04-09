@@ -1,0 +1,20 @@
+﻿<Window x:Class="TouhouSha.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TouhouSha"
+        xmlns:ctrls="clr-namespace:TouhouSha.Controls"
+        xmlns:cool="clr-namespace:TouhouSha.Controls.Cools"
+        mc:Ignorable="d" x:Name="This" WindowStartupLocation="CenterScreen"
+        Title="东方武符战" Height="600" Width="1020" Background="Black">
+    <Grid x:Name="GD_Main">
+        <MediaElement x:Name="UI_SoundPlayer" Visibility="Collapsed" LoadedBehavior="Manual" UnloadedBehavior="Stop" Width="1" Height="1" MediaEnded="UI_SoundPlayer_MediaEnded"/>
+        <local:StartMenu x:Name="UI_StartMenu" Visibility="Collapsed"/>
+        <local:LoadingPage x:Name="UI_LoadingPage" Visibility="Collapsed"/>
+        <local:CharactorGallery x:Name="UI_CharactorGallery" Visibility="Collapsed"/>
+        <local:CardGallery x:Name="UI_CardGallery" Visibility="Collapsed"/>
+        <local:GameBoard x:Name="UI_GameBoard" Visibility="Collapsed" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <local:ConfiguratePage x:Name="UI_ConfigPage" Visibility="Collapsed"/>
+    </Grid>
+</Window>

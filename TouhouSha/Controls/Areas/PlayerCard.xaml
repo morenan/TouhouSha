@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="TouhouSha.Controls.PlayerCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TouhouSha.Controls"
+             xmlns:cool="clr-namespace:TouhouSha.Controls.Cools"
+             mc:Ignorable="d" x:Name="This">
+    <UserControl.Resources>
+        <local:FalseHidden x:Key="FalseHidden"/>
+    </UserControl.Resources>
+    <Grid>
+        <cool:CardWaveCool x:Name="UI_Cool" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Visibility="Collapsed">
+        </cool:CardWaveCool>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid Width="{Binding CardWidth,ElementName=This,Mode=OneWay}"
+              Height="{Binding CardHeight,ElementName=This,Mode=OneWay}"
+              MinWidth="120" MinHeight="180" Margin="14">
+                <Image x:Name="IM_Card" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                   Stretch="UniformToFill" StretchDirection="Both"/>
+                <Border x:Name="BD_Name" Width="16" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#80802020" Offset="0"/>
+                            <GradientStop Color="#60802020" Offset="0.6"/>
+                            <GradientStop Color="#00802020" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <local:HighlightText x:Name="HT_Name" Orientation="Vertical" Foreground="White" HighlightThickness="0" Text="博丽灵梦" Margin="0,24,0,0"
+                                     HorizontalAlignment="Left"/>
+                </Border>
+                <Border x:Name="BD_Country" Width="16" HorizontalAlignment="Right" VerticalAlignment="Stretch">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
+                            <GradientStop Color="#80802020" Offset="0"/>
+                            <GradientStop Color="#60802020" Offset="0.6"/>
+                            <GradientStop Color="#00802020" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <local:HighlightText x:Name="HT_Country" Orientation="Vertical" Foreground="White" HighlightThickness="0" Text="自机" Margin="0,24,0,0"
+                                     HorizontalAlignment="Right"/>
+                </Border>
+                <Canvas x:Name="CV_In" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <local:HpBar x:Name="UI_Hp" Canvas.Left="4" Canvas.Top="4"/>
+                    <local:EquipList x:Name="UI_Equips" Canvas.Left="8" Canvas.Top="120" Width="104" 
+                                 SizeChanged="UI_Equips_SizeChanged"/>
+                    <Border x:Name="BD_FacedDown" Canvas.Left="40" Canvas.Top="80" BorderBrush="White" BorderThickness="1" Background="#FF404040" SnapsToDevicePixels="True" Visibility="Collapsed">
+                        <TextBlock Text="翻" Foreground="White" Margin="8"/>
+                    </Border>
+                    <StackPanel x:Name="SP_Symbols" Canvas.Right="20" Canvas.Top="20">
+
+                    </StackPanel>
+                </Canvas>
+            </Grid>
+        </Grid>
+        <cool:CardWaveCool2 x:Name="UI_Cool2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Visibility="Collapsed">
+        </cool:CardWaveCool2>
+    </Grid>
+</UserControl>

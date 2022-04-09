@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="TouhouSha.Controls.MessageAskBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TouhouSha.Controls"
+             mc:Ignorable="d" x:Name="This"
+             d:DesignHeight="32" d:DesignWidth="600"
+             Background="#80202020">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <TextBlock x:Name="TL_Message" Foreground="White" Text="{Binding Message,ElementName=This,Mode=OneWay}" VerticalAlignment="Center" Margin="4,0"/>
+            <ProgressBar Height="8" 
+                         Minimum="0" 
+                         Maximum="{Binding Timeout,ElementName=This,Mode=OneWay}" 
+                         Value="{Binding TimeValue,ElementName=This,Mode=OneWay}"/>
+        </StackPanel>
+        <local:CustomButton x:Name="BN_Yes" Grid.Column="1" Width="100" Visibility="Collapsed" IsEnabled="False" Click="BN_Yes_Click">确定</local:CustomButton>
+        <local:CustomButton x:Name="BN_No" Grid.Column="2" Width="100" Visibility="Collapsed" IsEnabled="False" Click="BN_No_Click">取消</local:CustomButton>
+    </Grid>
+</UserControl>

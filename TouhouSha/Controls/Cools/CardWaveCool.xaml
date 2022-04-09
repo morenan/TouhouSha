@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="TouhouSha.Controls.Cools.CardWaveCool"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TouhouSha.Controls.Cools"
+             mc:Ignorable="d" Background="#FF000000" IsHitTestVisible="False">
+    <UserControl.Template>
+        <ControlTemplate TargetType="{x:Type UserControl}">
+            <Grid>
+                <Canvas VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Path x:Name="PART_CoolPath0" Fill="#A060FF60">
+                        <Path.Effect>
+                            <BlurEffect Radius="10"/>
+                        </Path.Effect>
+                    </Path>
+                    <Path x:Name="PART_CoolPath1" Fill="#80C0FFC0">
+                        <Path.Effect>
+                            <BlurEffect Radius="6"/>
+                        </Path.Effect>
+                    </Path>
+                    <Path x:Name="PART_CoolPath2" Fill="#C0FFFFFF">
+                        <Path.Effect>
+                            <BlurEffect Radius="3"/>
+                        </Path.Effect>
+                    </Path>
+                </Canvas>
+                <ContentPresenter Content="{TemplateBinding Content}" Margin="14"/>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

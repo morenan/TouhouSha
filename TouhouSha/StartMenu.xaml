@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="TouhouSha.StartMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TouhouSha"
+             xmlns:ctrl="clr-namespace:TouhouSha.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Opacity="0">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type ctrl:StartMenuButton}">
+            <EventSetter Event="Click" Handler="StartMenuButton_Click"/>
+        </Style>
+        <Style TargetType="{x:Type ctrl:GameModeButton}">
+            <EventSetter Event="Click" Handler="StartMenuButton_Click"/>
+        </Style>
+        <Style TargetType="{x:Type ctrl:CustomButton}">
+            <EventSetter Event="Click" Handler="StartMenuButton_Click"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Image x:Name="IM_Background" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill" StretchDirection="Both"/>
+        <Canvas x:Name="CV_All" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ctrl:StartMenuButton x:Name="BN_SingleGame" Opacity="0"></ctrl:StartMenuButton>
+            <ctrl:StartMenuButton x:Name="BN_MultiGame" Opacity="0"></ctrl:StartMenuButton>
+            <ctrl:StartMenuButton x:Name="BN_Setting" Opacity="0"></ctrl:StartMenuButton>
+            <ctrl:StartMenuButton x:Name="BN_Libraries" Opacity="0"></ctrl:StartMenuButton>
+            <ctrl:StartMenuButton x:Name="BN_Thanks" Opacity="0"></ctrl:StartMenuButton>
+            <ctrl:StartMenuButton x:Name="BN_Exit" Opacity="0"></ctrl:StartMenuButton>
+            <ctrl:StartMenuButton x:Name="BN_Charactors" Opacity="0"></ctrl:StartMenuButton>
+            <ctrl:StartMenuButton x:Name="BN_Cards" Opacity="0"></ctrl:StartMenuButton>
+            <ctrl:StartMenuButton x:Name="BN_Rules" Opacity="0"></ctrl:StartMenuButton>
+            <ctrl:StartMenuButton x:Name="BN_Libraries_Return" Opacity="0"></ctrl:StartMenuButton>
+            <ctrl:GameModeButton x:Name="BN_Standard5" Opacity="0" Text="五人身份"></ctrl:GameModeButton>
+            <ctrl:GameModeButton x:Name="BN_Standard8" Opacity="0" Text="八人身份"></ctrl:GameModeButton>
+            <ctrl:GameModeButton x:Name="BN_KOF" Opacity="0" Text="KOF"></ctrl:GameModeButton>
+            <ctrl:GameModeButton x:Name="BN_FightLandlord" Opacity="0" Text="斗地主"></ctrl:GameModeButton>
+            <ctrl:CustomButton x:Name="BN_GameMode_Return" Opacity="0" Width="100" Height="24">返回</ctrl:CustomButton>
+        </Canvas>
+    </Grid>
+</UserControl>

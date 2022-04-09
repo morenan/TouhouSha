@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="TouhouSha.CharactorGallery"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TouhouSha"
+             xmlns:ctrls="clr-namespace:TouhouSha.Controls"
+             mc:Ignorable="d" x:Name="This"
+             d:DesignHeight="450" d:DesignWidth="800" Background="#FF202020">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="IM_Background" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill" StretchDirection="Both" 
+               Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Border BorderThickness="2" BorderBrush="White" Background="#80404040" CornerRadius="4" Margin="2">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <ListBox Background="Transparent" BorderThickness="0" 
+                         ItemsSource="{Binding Countries,ElementName=This,Mode=OneWay}"
+                         SelectedItem="{Binding SelectedCountry,ElementName=This,Mode=TwoWay}"
+                         Foreground="White">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" Margin="2"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="2"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                        <Border x:Name="PART_Border" 
+                                                BorderBrush="#00C8FFC8"
+                                                BorderThickness="2">
+                                            <Grid>
+                                                <Border x:Name="PART_Border_Selected" Opacity="0"
+                                                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                                    <Border.Background>
+                                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                            <GradientStop Color="#80C0FFC0" Offset="0"/>
+                                                            <GradientStop Color="#80406040" Offset="0.4"/>
+                                                            <GradientStop Color="#80406040" Offset="0.6"/>
+                                                            <GradientStop Color="#80C0FFC0" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Border.Background>
+                                                </Border>
+                                                <Border x:Name="PART_Border_MouseOver" Opacity="0"
+                                                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                                    <Border.Background>
+                                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                            <GradientStop Color="#20FFFFFF" Offset="0"/>
+                                                            <GradientStop Color="#40FFFFFF" Offset="0.4"/>
+                                                            <GradientStop Color="#40FFFFFF" Offset="0.6"/>
+                                                            <GradientStop Color="#20FFFFFF" Offset="1"/>
+                                                        </LinearGradientBrush>
+                                                    </Border.Background>
+                                                </Border>
+                                                <ContentPresenter Content="{TemplateBinding Content}" Margin="4"/>
+                                            </Grid>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Trigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="BorderBrush.Color" To="#FFC8FFC8" Duration="0:0:0.1"/>
+                                                            <DoubleAnimation Storyboard.TargetName="PART_Border_Selected" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.EnterActions>
+                                                <Trigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="BorderBrush.Color" To="#00C8FFC8" Duration="0:0:0.1"/>
+                                                            <DoubleAnimation Storyboard.TargetName="PART_Border_Selected" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.ExitActions>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Trigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetName="PART_Border_MouseOver" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.1"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.EnterActions>
+                                                <Trigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetName="PART_Border_MouseOver" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.1"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </Trigger.ExitActions>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+            </ScrollViewer>
+        </Border>
+        <Border x:Name="BD_Chars" BorderThickness="2" BorderBrush="White" Background="#80404040" CornerRadius="4" Margin="2" 
+                Grid.Column="1" SizeChanged="BD_Chars_SizeChanged">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <Grid x:Name="GD_Chars" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </ScrollViewer>
+        </Border>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <ctrls:CustomButton x:Name="BN_Return" Width="100" Height="23" Content="返回" Margin="4" Click="BN_Return_Click"/>
+        </StackPanel>
+        <Canvas x:Name="CV_CharactorTooltip" Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ctrls:CharactorTooltip x:Name="UI_CharactorTooltip" Visibility="Collapsed"/>
+            <ctrls:AbilityRadarTooltip x:Name="UI_AbilityRadarTooltip" Visibility="Collapsed"/>
+        </Canvas>
+    </Grid>
+</UserControl>

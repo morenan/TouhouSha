@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDEB78BD-7C0D-4BD8-91EC-A52ECD26DAA7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TouhouSha.Core</RootNamespace>
+    <AssemblyName>TouhouSha.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIs\AITools.cs" />
+    <Compile Include="AIs\AskWorth.cs" />
+    <Compile Include="AIs\CardFilterAuto.cs" />
+    <Compile Include="AIs\CardFilterWorth.cs" />
+    <Compile Include="AIs\CardTargetFilterAuto.cs" />
+    <Compile Include="AIs\CardTargetFilterWorth.cs" />
+    <Compile Include="AIs\DesktopCardFilterAuto.cs" />
+    <Compile Include="AIs\DesktopCardFilterWorth.cs" />
+    <Compile Include="AIs\IAssGausser.cs" />
+    <Compile Include="AIs\ICardGausser.cs" />
+    <Compile Include="AIs\InitativeSkillAuto.cs" />
+    <Compile Include="AIs\InitativeSkillWorth.cs" />
+    <Compile Include="AIs\IWorthAccessment.cs" />
+    <Compile Include="AIs\ListSelectWorth.cs" />
+    <Compile Include="AIs\PlayerFilterAuto.cs" />
+    <Compile Include="AIs\PlayerFilterWorth.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="Charactor.cs" />
+    <Compile Include="Collections\PriorityCollection.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Events\CardEvent.cs" />
+    <Compile Include="Events\DamageEvent.cs" />
+    <Compile Include="Events\DelaySpellEvent.cs" />
+    <Compile Include="Events\DieEvent.cs" />
+    <Compile Include="Events\DiscardStateEvent.cs" />
+    <Compile Include="Events\DrawStateEvent.cs" />
+    <Compile Include="Events\FaceClipEvent.cs" />
+    <Compile Include="Events\GiveExtraPhaseEvent.cs" />
+    <Compile Include="Events\GiveExtraStateEvent.cs" />
+    <Compile Include="Events\HealEvent.cs" />
+    <Compile Include="Events\IMultiTargetsEvent.cs" />
+    <Compile Include="Events\JudgeEvent.cs" />
+    <Compile Include="Events\LeaveUseCardStateEvent.cs" />
+    <Compile Include="Events\MoveCardEvent.cs" />
+    <Compile Include="Events\PhaseEvent.cs" />
+    <Compile Include="Events\PointBattleEvent.cs" />
+    <Compile Include="Events\PropChangeEvent.cs" />
+    <Compile Include="Events\SkillEvent.cs" />
+    <Compile Include="Events\SkillInitativeEvent.cs" />
+    <Compile Include="Events\SkillOnceResetEvent.cs" />
+    <Compile Include="Events\StateChangeEvent.cs" />
+    <Compile Include="Events\UseCalculatorEvent.cs" />
+    <Compile Include="Events\UseCardCalculatorEvent.cs" />
+    <Compile Include="Events\UseFilterEvent.cs" />
+    <Compile Include="Events\UseTriggerEvent.cs" />
+    <Compile Include="Filter.cs" />
+    <Compile Include="Filters\FulfillNumberCardFilter.cs" />
+    <Compile Include="Filters\FulfillNumberPlayerFilter.cs" />
+    <Compile Include="Filters\PointBattleConditionFilter.cs" />
+    <Compile Include="Filters\TargetCardFilter.cs" />
+    <Compile Include="Filters\UseCardStateCardFilter.cs" />
+    <Compile Include="ImageHelper.cs" />
+    <Compile Include="IPackage.cs" />
+    <Compile Include="IPlayerConsole.cs" />
+    <Compile Include="IPlayerRegister.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="ShaObject.cs" />
+    <Compile Include="Skill.cs" />
+    <Compile Include="StackHandler.cs" />
+    <Compile Include="State.cs" />
+    <Compile Include="Trigger.cs" />
+    <Compile Include="UIs\CharactorInfoCore.cs" />
+    <Compile Include="UIs\DesktopCardBoardCore.cs" />
+    <Compile Include="UIs\Events\AskEvent.cs" />
+    <Compile Include="UIs\Events\UICardEvent.cs" />
+    <Compile Include="UIs\Events\UIDamageEvent.cs" />
+    <Compile Include="UIs\Events\UIHealEvent.cs" />
+    <Compile Include="UIs\Events\UIMoveCardEvent.cs" />
+    <Compile Include="UIs\Events\UIEvent.cs" />
+    <Compile Include="UIs\Events\UIEventFromLogical.cs" />
+    <Compile Include="UIs\Events\UIEventGroup.cs" />
+    <Compile Include="UIs\Events\UISkillActive.cs" />
+    <Compile Include="UIs\Events\UIStateChangeEvent.cs" />
+    <Compile Include="UIs\ListBoardCore.cs" />
+    <Compile Include="UIs\ParallelSelectCardBoardCore.cs" />
+    <Compile Include="UIs\QuestEventInUseCardStateEventArgs.cs" />
+    <Compile Include="UIs\SelectCardBoardCore.cs" />
+    <Compile Include="UIs\SelectCharactorBoardCore.cs" />
+    <Compile Include="UIs\SelectPlayerAndCardBoardCore.cs" />
+    <Compile Include="UIs\SelectPlayerBoardCore.cs" />
+    <Compile Include="World.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Zone.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
